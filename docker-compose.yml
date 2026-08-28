@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: hireflow-postgres
+    environment:
+      POSTGRES_DB: hireflow
+      POSTGRES_USER: hireflow
+      POSTGRES_PASSWORD: hireflow
+    ports:
+      - "5433:5432"
+    volumes:
+      - hireflow-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  hireflow-postgres-data:

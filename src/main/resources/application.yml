@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: hireflow
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/hireflow
+    username: hireflow
+    password: hireflow
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/dbChangeLog_master.xml
